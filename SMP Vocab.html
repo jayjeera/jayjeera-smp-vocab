@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SMP Vocab</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EAF6FF;--sf:#fff;--tx:#0B2A6F;--mu:#5B6F9A;--bl:#1F8FFF;--bd:#0E4FD1;--yl:#FFE600;--rd:#E5192D;--ok:#12A150;--ln:#D3E6F7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1730;--sf:#12264A;--tx:#EAF2FF;--mu:#93A8D0;--bl:#4DA8FF;--bd:#4DA8FF;--ln:#24406F}}
+:root[data-theme="dark"]{--bg:#0A1730;--sf:#12264A;--tx:#EAF2FF;--mu:#93A8D0;--bl:#4DA8FF;--bd:#4DA8FF;--ln:#24406F}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 Prompt,"Noto Sans Thai",system-ui,sans-serif;min-height:100vh}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.logo{font-weight:700;font-size:22px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.logo b{background:var(--yl);color:#0B2A6F;padding:0 10px;border-radius:10px}
+button{font:inherit;cursor:pointer;border:0;color:inherit}
+button:focus-visible{outline:3px solid var(--yl);outline-offset:2px}
+.btn{padding:12px 20px;border-radius:14px;font-weight:600;background:var(--sf);border:2px solid var(--ln)}
+.btn.p{background:var(--bl);color:#fff;border-color:var(--bl)}
+.btn.y{background:var(--yl);color:#0B2A6F;border-color:var(--yl)}
+.btn.r{color:var(--rd);border-color:var(--rd)}
+.ghost{background:none;color:var(--mu);padding:6px 0;font-weight:500}
+h1{font-size:30px;margin:0 0 4px}h2{font-size:18px;margin:28px 0 10px}
+.mu{color:var(--mu);font-size:14px}
+.hero{background:var(--bl);color:#fff;border-radius:24px;padding:28px;margin-bottom:24px}
+.hero h1{color:#fff}.hero .mu{color:#E6F3FF}
+.hero em{font-style:normal;background:var(--yl);color:#0B2A6F;padding:0 8px;border-radius:8px}
+.grid{display:grid;gap:12px}
+.deck{background:var(--sf);border-radius:18px;padding:18px;text-align:left;width:100%;border:2px solid transparent}
+.deck:hover{border-color:var(--bl)}
+.deck .t{font-weight:600;font-size:18px}
+.tag{display:inline-block;background:var(--yl);color:#0B2A6F;font-size:12px;font-weight:600;padding:0 8px;border-radius:8px;margin-right:6px}
+.bar{height:8px;background:var(--ln);border-radius:8px;overflow:hidden;margin-top:12px}
+.bar i{display:block;height:100%;background:var(--bl);border-radius:8px;transition:width .3s}
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.mode{background:var(--sf);border-radius:18px;padding:18px;text-align:left;border:2px solid transparent}
+.mode:hover{border-color:var(--yl)}.mode b{display:block;font-size:17px}
+.scene{perspective:1200px;margin:18px 0}
+.card{position:relative;height:340px;transform-style:preserve-3d;transition:transform .45s;cursor:pointer}
+.card.f{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;background:var(--sf);border-radius:24px;padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:2px solid var(--ln);box-shadow:0 8px 0 var(--ln)}
+.face.b{transform:rotateY(180deg);background:var(--yl);color:#0B2A6F;border-color:var(--yl);box-shadow:0 8px 0 #E0C900}
+.w{font-size:44px;font-weight:700;line-height:1.15}
+.pos{background:var(--bl);color:#fff;font-size:13px;padding:0 10px;border-radius:10px;margin:8px 0 14px}
+.ex{background:var(--bg);border-radius:14px;padding:12px 16px;max-width:460px}
+.th{font-size:38px;font-weight:700}
+.spk{position:absolute;top:14px;left:14px;width:42px;height:42px;border-radius:50%;background:var(--bg);font-size:18px}
+.face.b .spk{background:#fff}
+.row{display:flex;gap:10px;justify-content:center}.row .btn{flex:1;max-width:220px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.opt{display:block;width:100%;text-align:left;background:var(--sf);border:2px solid var(--ln);padding:14px 18px;border-radius:14px;margin-bottom:10px;font-size:18px;font-weight:500}
+.opt.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.opt.no{background:var(--rd);color:#fff;border-color:var(--rd)}
+.q{background:var(--sf);border-radius:20px;padding:28px;text-align:center;margin:18px 0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.tile{background:var(--sf);border:2px solid var(--ln);border-radius:14px;padding:16px 8px;font-weight:600;min-height:64px}
+.tile.s{border-color:var(--bl);background:var(--bl);color:#fff}.tile.d{visibility:hidden}.tile.x{background:var(--rd);color:#fff}
+.list{background:var(--sf);border-radius:18px;overflow:hidden}
+.li{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;border-bottom:1px solid var(--ln);align-items:center}
+.li:last-child{border:0}.li .e{font-weight:600}.li small{display:block;color:var(--mu)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--ln);flex:none}.dot.k{background:var(--ok)}.dot.n{background:var(--rd)}
+.big{font-size:64px;font-weight:700;color:var(--bl)}
+@media(max-width:480px){.w{font-size:36px}.th{font-size:32px}.card{height:360px}}
+main{max-width:960px}.grid{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}.card{height:410px}.em{font-size:92px;line-height:1;margin-bottom:8px}.face.b .em{font-size:60px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:center;background:linear-gradient(135deg,var(--bl),var(--bd));overflow:hidden;padding:36px}
+.hero h1{font-size:40px;line-height:1.2;margin-bottom:10px}.hero p{margin:0 0 16px;color:#E6F3FF}
+.chips{margin-bottom:20px}.chips span{display:inline-block;background:rgba(255,255,255,.2);padding:2px 14px;border-radius:99px;font-size:14px;margin:0 6px 6px 0;color:#fff}
+.pv{position:relative;height:210px}.pc{position:absolute;background:#fff;color:#0B2A6F;border-radius:20px;padding:14px 18px;text-align:center;width:160px;box-shadow:0 8px 0 rgba(0,0,0,.18)}.pc b,.pc small{display:block}.pc .em{font-size:48px;margin:0}.c1{left:6px;top:4px;transform:rotate(-8deg)}.c2{right:0;top:56px;transform:rotate(7deg);background:var(--yl)}
+.di{font-size:42px;line-height:1;margin-bottom:10px}
+@media(max-width:600px){.hero{grid-template-columns:1fr;padding:24px}.hero h1{font-size:32px}.pv{height:190px}.card{height:430px}}
+.dash{display:grid;grid-template-columns:1.3fr 1fr;gap:12px;margin-bottom:12px}.wod{background:var(--sf);border-radius:20px;padding:18px;display:flex;gap:14px;align-items:center}.wod .em{font-size:56px;margin:0}.goal{background:var(--sf);border-radius:20px;padding:18px}.bd{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}.bg{background:var(--yl);color:#0B2A6F;border-radius:99px;padding:0 10px;font-size:13px;font-weight:600}.bg.off{opacity:.35;filter:grayscale(1)}
+.chp{margin:0 6px 8px 0;border-radius:99px;padding:4px 16px;background:var(--sf);border:2px solid var(--ln);font-weight:500}.chp.on{background:var(--bl);color:#fff;border-color:var(--bl)}
+.inp{width:100%;font:inherit;font-size:22px;padding:14px 18px;border-radius:14px;border:2px solid var(--ln);background:var(--sf);color:var(--tx);text-align:center}textarea.inp{text-align:left;font-size:15px;min-height:170px}
+@media(max-width:600px){.dash{grid-template-columns:1fr}}
+.qcard{background:var(--sf);border-radius:24px;padding:18px;margin-bottom:24px}.qh{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:18px}
+.qplus{width:44px;height:44px;border-radius:14px;background:var(--sf);border:2px solid var(--bd);font-size:22px;line-height:1}
+.qb{margin-top:12px;border-radius:18px;padding:40px 16px 70px;position:relative;display:flex;justify-content:center;background-color:#B3D6F5;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:24px 24px}
+.qn{position:relative;background:#FAFCFF;color:#0B2A6F;border-radius:6px;padding:30px 24px 16px;transform:rotate(1.2deg);box-shadow:0 12px 24px rgba(11,42,111,.18);max-width:520px;width:100%;text-align:center}
+.qn:before{content:"";position:absolute;top:-16px;left:50%;width:130px;height:34px;margin-left:-65px;background:rgba(255,255,255,.6);transform:rotate(-2deg)}
+.qt{font-size:26px;font-weight:700;line-height:1.55}.qt em{font-style:italic;color:var(--bl)}.qs{text-align:right;color:#5B6F9A;font-size:15px;margin-top:8px}
+.qlogo{position:absolute;left:16px;bottom:16px;background:#fff;color:#0B2A6F;border-radius:99px;padding:6px 14px;font-weight:700;font-size:14px}.qlogo b{color:#3B82F6}
+@media(max-width:600px){.qt{font-size:21px}}
+.rail{display:flex;gap:12px;overflow-x:auto;padding:8px 2px 14px}.rail .deck{flex:0 0 240px}.soon{opacity:.6;cursor:default;border:2px dashed var(--ln)}.soon:hover{border-color:var(--ln)}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+var D=[
+{id:"starter",n:"Starter Pack",lv:"A2–B1",d:"คำพื้นฐานที่เจอบ่อยในชีวิตประจำวันและการเดินทาง",w:[
+["airport","noun","สนามบิน","We need to arrive at the airport two hours before the flight."],
+["luggage","noun","สัมภาระ, กระเป๋าเดินทาง","She checked her luggage at the counter."],
+["ticket","noun","ตั๋ว","I bought two tickets for the concert."],
+["delay","verb","ล่าช้า, เลื่อนออกไป","The storm delayed our flight by three hours."],
+["journey","noun","การเดินทาง","The journey from Bangkok to Chiang Mai takes ten hours by train."],
+["borrow","verb","ยืม","Can I borrow your pen for a moment?"],
+["afford","verb","มีกำลังจ่าย","They cannot afford a new car this year."],
+["invite","verb","เชิญ","He invited all his classmates to the party."],
+["prefer","verb","ชอบมากกว่า","I prefer tea to coffee."],
+["suggest","verb","แนะนำ, เสนอ","She suggested taking a taxi instead of the bus."],
+["enough","adjective","เพียงพอ","Do we have enough time to finish the test?"],
+["improve","verb","พัฒนาให้ดีขึ้น","Reading every day will improve your vocabulary."],
+["receive","verb","ได้รับ","Students will receive their scores next week."],
+["decide","verb","ตัดสินใจ","I cannot decide which university to apply to."],
+["usually","adverb","โดยปกติ","We usually have lunch at noon."]]},
+{id:"tgat",n:"TGAT Academic Core",lv:"B1–B2",d:"คำศัพท์เชิงวิชาการที่ออกบ่อยในบทอ่าน TGAT / A-Level",w:[
+["analyze","verb","วิเคราะห์","Scientists analyze the data before drawing a conclusion."],
+["evidence","noun","หลักฐาน","There is strong evidence that exercise improves memory."],
+["impact","noun","ผลกระทบ","Social media has a big impact on teenagers."],
+["process","noun","กระบวนการ","Learning a language is a slow process."],
+["significant","adjective","สำคัญ, มีนัยสำคัญ","The study found a significant difference between the two groups."],
+["factor","noun","ปัจจัย","Sleep is an important factor in academic success."],
+["approach","noun","แนวทาง, วิธีการ","The school takes a new approach to teaching math."],
+["require","verb","ต้องการ, บังคับ","This course requires a lot of reading."],
+["conclude","verb","สรุป","The researchers concluded that the method was effective."],
+["environment","noun","สิ่งแวดล้อม","Plastic waste is harming the environment."],
+["resource","noun","ทรัพยากร","Water is a valuable natural resource."],
+["research","noun","งานวิจัย","Recent research shows that sleep helps students learn."],
+["maintain","verb","รักษา, คงไว้","It is hard to maintain focus for three hours."],
+["estimate","verb","ประมาณการ","Experts estimate that the population will double."],
+["theory","noun","ทฤษฎี","Einstein developed the theory of relativity."]]},
+{id:"phrasal",n:"Phrasal Verbs & Conversation",lv:"B1–B2",d:"วลีกริยาที่ใช้ในบทสนทนา ออกสอบบ่อยในข้อ Conversation",w:[
+["look forward to","phrasal verb","รอคอยอย่างตั้งใจ","I look forward to meeting you next week."],
+["give up","phrasal verb","ยอมแพ้, เลิก","Never give up on your dreams."],
+["find out","phrasal verb","ค้นพบ, หาข้อมูล","Let me find out what time the shop opens."],
+["carry on","phrasal verb","ทำต่อไป","Please carry on with your work."],
+["turn down","phrasal verb","ปฏิเสธ, ลดเสียง","She turned down the job offer."],
+["run out of","phrasal verb","ใช้จนหมด","We have run out of milk."],
+["come up with","phrasal verb","คิดออก (ไอเดีย)","He came up with a clever solution."],
+["put off","phrasal verb","เลื่อนออกไป","Do not put off your homework until tomorrow."],
+["take part in","phrasal verb","เข้าร่วม","Over 200 students took part in the contest."],
+["get along with","phrasal verb","เข้ากันได้ดีกับ","Do you get along with your new roommate?"],
+["figure out","phrasal verb","คิดออก, หาคำตอบ","I cannot figure out this math problem."],
+["set up","phrasal verb","จัดตั้ง, ติดตั้ง","They set up a new company last year."],
+["bring up","phrasal verb","หยิบยกขึ้นมาพูด, เลี้ยงดู","She was brought up by her grandparents."],
+["cut down on","phrasal verb","ลดปริมาณ","The doctor told him to cut down on sugar."],
+["deal with","phrasal verb","จัดการกับ","Teachers must deal with many problems every day."]]},
+{id:"food",n:"Food & Health",lv:"A2–B1",ic:"🥗",d:"อาหาร สุขภาพ และการไปหาหมอ",w:[
+["nutrition","noun","โภชนาการ","Good nutrition is important for growing children.","🥗"],
+["vitamin","noun","วิตามิน","Oranges are rich in vitamin C.","🍊"],
+["recipe","noun","สูตรอาหาร","My grandmother shared her recipe for green curry.","📖"],
+["ingredient","noun","ส่วนผสม","Fresh herbs are the key ingredient in this dish.","🧂"],
+["exercise","noun","การออกกำลังกาย","Regular exercise keeps your heart strong.","🏃"],
+["healthy","adjective","มีสุขภาพดี","He eats a healthy breakfast every morning.","🥦"],
+["headache","noun","อาการปวดหัว","I have a terrible headache after the exam.","🤕"],
+["medicine","noun","ยา","Take this medicine twice a day after meals.","💊"],
+["hospital","noun","โรงพยาบาล","She works as a nurse at a large hospital.","🏥"],
+["sleep","verb","นอนหลับ","Teenagers need about eight hours of sleep.","😴"],
+["dentist","noun","ทันตแพทย์","I have an appointment with the dentist on Friday.","🦷"],
+["diet","noun","อาหารที่กินประจำ, การควบคุมอาหาร","A balanced diet includes fruit and vegetables.","🍽️"]]},
+{id:"tech",n:"Technology & Media",lv:"B1–B2",ic:"📱",d:"เทคโนโลยี อินเทอร์เน็ต และสื่อ",w:[
+["device","noun","อุปกรณ์","Please turn off all electronic devices during the test.","📱"],
+["software","noun","ซอฟต์แวร์","The school installed new software on every computer.","💻"],
+["download","verb","ดาวน์โหลด","You can download the study guide for free.","⬇️"],
+["network","noun","เครือข่าย","The Wi-Fi network is down again.","🌐"],
+["password","noun","รหัสผ่าน","Choose a strong password to protect your account.","🔐"],
+["screen","noun","หน้าจอ","Staring at a screen for hours can hurt your eyes.","🖥️"],
+["battery","noun","แบตเตอรี่","My phone battery died during the call.","🔋"],
+["camera","noun","กล้อง","She bought a new camera for her trip.","📷"],
+["update","verb","อัปเดต","Remember to update your apps regularly.","🔄"],
+["online","adjective","ออนไลน์","Many students take classes online these days.","🛜"],
+["website","noun","เว็บไซต์","The school website has a list of all courses.","🖱️"],
+["headline","noun","พาดหัวข่าว","Every newspaper had the same headline today.","📰"]]},
+{id:"nature",n:"Environment & Nature",lv:"B1–B2",ic:"🌱",d:"สิ่งแวดล้อม ธรรมชาติ และพลังงาน",w:[
+["pollution","noun","มลพิษ","Air pollution is a serious problem in big cities.","🏭"],
+["recycle","verb","รีไซเคิล","We recycle paper, glass, and plastic bottles.","♻️"],
+["climate","noun","สภาพภูมิอากาศ","Climate change is making summers hotter.","🌡️"],
+["forest","noun","ป่า","A large forest covers the north of the country.","🌳"],
+["ocean","noun","มหาสมุทร","The ocean covers more than seventy percent of the Earth.","🌊"],
+["energy","noun","พลังงาน","Solar panels turn sunlight into energy.","⚡"],
+["species","noun","สายพันธุ์","Many species are in danger of extinction.","🦎"],
+["drought","noun","ภัยแล้ง","The long drought destroyed the rice crops.","🏜️"],
+["flood","noun","น้ำท่วม","Heavy rain caused a flood in the village.","🌧️"],
+["wildlife","noun","สัตว์ป่า","National parks protect wildlife.","🦌"],
+["renewable","adjective","ที่ทดแทนได้","Wind and solar are renewable sources of power.","🌞"],
+["waste","noun","ขยะ, ของเสีย","We should reduce food waste at home.","🗑️"]]},
+{id:"work",n:"Work & Education",lv:"B1–B2",ic:"💼",d:"การเรียน การสมัครงาน และชีวิตการทำงาน",w:[
+["deadline","noun","กำหนดส่ง","The deadline for the essay is Monday.","⏰"],
+["salary","noun","เงินเดือน","She receives a monthly salary of forty thousand baht.","💵"],
+["interview","noun","การสัมภาษณ์","He was nervous before the job interview.","🤝"],
+["scholarship","noun","ทุนการศึกษา","She won a scholarship to study abroad.","🎓"],
+["lecture","noun","การบรรยาย","The professor gave a lecture on climate change.","👨‍🏫"],
+["graduate","verb","สำเร็จการศึกษา","He will graduate from university next year.","🧑‍🎓"],
+["assignment","noun","งานที่ได้รับมอบหมาย","The teacher gave us a difficult assignment.","📝"],
+["colleague","noun","เพื่อนร่วมงาน","My colleagues helped me finish the report.","👥"],
+["experience","noun","ประสบการณ์","She has five years of experience in marketing.","🧰"],
+["career","noun","เส้นทางอาชีพ","He started his career as a teacher.","🪜"],
+["application","noun","ใบสมัคร","Send your application before the end of the month.","📨"],
+["certificate","noun","ใบรับรอง","She received a certificate after finishing the course.","📜"]]}
+];
+D[0].ic="🧳";D[1].ic="🎓";D[2].ic="💬";
+var EM={airport:"✈️",luggage:"🧳",ticket:"🎫",delay:"⏳",journey:"🚆",borrow:"🤲",afford:"💰",invite:"💌",prefer:"⚖️",suggest:"💡",enough:"✅",improve:"📈",receive:"📬",decide:"🤔",usually:"🔁",analyze:"🔬",evidence:"🔍",impact:"💥",process:"⚙️",significant:"⭐",factor:"🧩",approach:"🧭",require:"📋",conclude:"🏁",environment:"🌍",resource:"💧",research:"📚",maintain:"🔧",estimate:"🧮",theory:"🧠","look forward to":"🤩","give up":"🏳️","find out":"🔎","carry on":"🚶","turn down":"🙅","run out of":"🪫","come up with":"💭","put off":"🛋️","take part in":"🙋","get along with":"🫶","figure out":"🕵️","set up":"🛠️","bring up":"👶","cut down on":"✂️","deal with":"🧗"};
+function em(w){return w[4]||EM[w[0]]||"📘"}
+function cont(){var f=-1;D.forEach(function(d,i){if(f<0&&d.w.some(function(w){var r=X.r[d.id+":"+w[0]];return r&&r[1]<=Date.now()}))f=i});for(var i=0;i<D.length&&f<0;i++)if(cnt(D[i])<D[i].w.length)f=i;if(f<0)f=0;deck(f);study()}
+var K={};try{K=JSON.parse(localStorage.getItem("smpv")||"{}")}catch(e){}
+var X={r:{},g:{},u:[]};try{X=Object.assign(X,JSON.parse(localStorage.getItem("smpx")||"{}"))}catch(e){}
+X.u.forEach(function(d){D.push(d)});
+function save(){try{localStorage.setItem("smpv",JSON.stringify(K));localStorage.setItem("smpx",JSON.stringify(X))}catch(e){}}
+var FL="",TG={starter:"TGAT A-Level",tgat:"TGAT A-Level",phrasal:"TGAT",food:"A-Level IELTS",tech:"A-Level IELTS",nature:"A-Level IELTS",work:"TGAT IELTS"},IV=[0,1,3,7,14,30];
+function ds(d){return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
+function bump(){var t=ds(new Date());X.g[t]=(X.g[t]||0)+1}
+function streak(){var n=0,d=new Date();if(!X.g[ds(d)])d.setDate(d.getDate()-1);while(X.g[ds(d)]){n++;d.setDate(d.getDate()-1)}return n}
+function sr(d,w,ok){var k=d.id+":"+w[0],b=ok?Math.min((X.r[k]||[0])[0]+1,5):1;X.r[k]=[b,Date.now()+IV[b]*864e5]}
+function due(d){return d.w.filter(function(w){var r=X.r[d.id+":"+w[0]];return !r||r[1]<=Date.now()})}
+function enc(){return ["เก่งมาก! ไปต่ออีกนิดนะ","ทุกคำที่จำได้ คือคะแนนที่เพิ่มขึ้น","สม่ำเสมอแบบนี้ ไปถึงเป้าแน่นอน","พักสายตาแป๊บ แล้วมาลุยต่อ"][Math.floor(Math.random()*4)]}
+function chips(){return ["","TGAT","A-Level","IELTS"].map(function(t){return '<button class="chp'+(FL===t?" on":"")+'" data-t="'+t+'" onclick="FL=this.dataset.t;home()">'+(t||"ทั้งหมด")+'</button>'}).join("")}
+function dash(){var g=X.g[ds(new Date())]||0,A=[],k=0,s=streak();D.forEach(function(d){k+=cnt(d);d.w.forEach(function(w){A.push(w)})});var w=A[Math.floor(Date.now()/864e5)%A.length];
+var B=[["🌱","เริ่มต้น",g>0||k>0],["📘","จำได้ 25 คำ",k>=25],["🏆","จำได้ 75 คำ",k>=75],["🔥","ต่อเนื่อง 3 วัน",s>=3],["⚡","วันนี้ครบ 10 คำ",g>=10]].map(function(b){return '<span class="bg'+(b[2]?"":" off")+'">'+b[0]+' '+b[1]+'</span>'}).join("");
+return '<div class="dash"><div class="wod"><div class="em">'+em(w)+'</div><div><div class="mu">คำศัพท์ประจำวัน</div><b style="font-size:22px">'+w[0]+'</b> <span class="mu">'+w[2]+'</span><div>'+w[3]+'</div><button class="ghost" data-w="'+w[0]+'" onclick="spk(this.dataset.w)">🔊 ฟัง</button> <button class="ghost" data-w="'+w[0]+'" onclick="shr(this.dataset.w)">📤 แชร์</button></div></div><div class="goal"><b>เป้าหมายวันนี้ '+Math.min(g,10)+' / 10 คำ</b><div class="bar"><i style="width:'+Math.min(g,10)*10+'%"></i></div><div class="bd">'+B+'</div></div></div><div class="modes" style="margin-bottom:24px"><button class="mode" onclick="mock()"><b>📝 Mock Test</b><span class="mu">20 ข้อ จับเวลาข้อละ 20 วิ จากทุกชุด</span></button><button class="mode" onclick="mine()"><b>➕ เพิ่มชุดคำเอง</b><span class="mu">วางลิสต์ หรืออัปโหลดไฟล์ CSV</span></button></div>'}
+var QS=[["จะเหลือเวลาเท่าไหร่ไม่รู้<br>ถ้ายังมีโอกาส<br>ขอทำ “<em>เต็มที่</em>” ก็พอ","พี่ปั้น SmartMathPro"],
+["ท่องวันละนิด สะสมทีละคำ<br>วันสอบจริงจะ <em>มั่นใจ</em>","SmartMathPro"],
+["พลาดไม่เป็นไร กด “ต้องทบทวน” แล้วไปต่อ<br>คำนั้นจะ <em>จำได้</em> เอง","SmartMathPro"],
+["ศัพท์ 10 คำวันนี้<br>คือคะแนนที่ <em>เพิ่มขึ้น</em> ในวันสอบ","SmartMathPro"]],QI=0;
+function qbody(){var q=QS[QI];return '<div class="qn"><div class="qt">'+q[0]+'</div><div class="qs">- '+q[1]+'</div></div><div class="qlogo">🤓 Smart<b>Math</b>Pro</div>'}
+function nq(){QI=(QI+1)%QS.length;document.getElementById("qb").innerHTML=qbody()}
+function quoteCard(){return '<div class="qcard"><div class="qh"><span>💬 กำลังใจวันนี้</span><button class="qplus" onclick="nq()" aria-label="ข้อความถัดไป">+</button></div><div class="qb" id="qb">'+qbody()+'</div></div>'}
+var SOON=[["Oxford 3000 / 5000","คำศัพท์แยกตามระดับ B1–C1 อ้างอิง Oxford",["B1 Verbs 1","B1 Verbs 2","B1 Nouns 1","B1 Adjectives 1","B2 Verbs 1","B2 Nouns 1","B2 Adjectives 1","C1 Verbs 1","C1 Nouns 1"],"📗"],["Cambridge","เตรียมสอบ Cambridge English (PET / FCE / CAE)",["PET Essentials","FCE Topic Vocab","FCE Collocations","CAE Advanced Words","Cambridge Phrasal Verbs","Cambridge Idioms"],"📕"],["TGAT / A-Level Precision","โมดูลละเอียดเจาะจงเรื่องเพื่อความแม่นยำ",["B1 Grammar Related Words","B2 Academic Transition Words","B1 Colloquialisms","B2 Conversational Starters","B2 Reading Passage Vocab","B2 Cloze Test Vocab"],"🎯"],["IELTS & SAT","คำศัพท์ตามสนามสอบระดับสูง",["IELTS Academic Word List","IELTS Speaking Topics","IELTS Writing Task 2","SAT Vocab in Context","SAT Words 1"],"🏆"]];
+function soon(){return SOON.map(function(g){return '<h2>'+g[3]+' '+g[0]+' <span class="mu">'+g[2].length+' ชุด</span></h2><div class="mu">'+g[1]+'</div><div class="rail">'+g[2].map(function(n){var m=n.match(/^(A2|B1|B2|C1)/);return '<div class="deck soon"><span class="tag">'+(m?m[1]:"—")+'</span><div class="t">'+n+'</div><div class="mu">🔒 เร็ว ๆ นี้</div><div class="bar"><i style="width:0"></i></div></div>'}).join("")+'</div>'}).join("")}
+function shr(x){var t="คำศัพท์ประจำวันจาก SMP Vocab: "+x;try{navigator.share?navigator.share({text:t}):navigator.clipboard.writeText(t)}catch(e){}}
+function typ(){S.qs=sh(S.d.w);S.n=0;S.sc=0;S.mode="typ";tn()}
+function tn(){if(S.n>=S.qs.length)return fin();var w=S.qs[S.n];S.cur=w;$(hd()+'<div class="top"><button class="ghost" onclick="deck('+S.i+')">← ออก</button><span class="mu">ข้อ '+(S.n+1)+' / '+S.qs.length+' · ถูก '+S.sc+'</span></div><div class="q"><div class="em">'+em(w)+'</div><div class="th">'+w[2]+'</div><div class="mu">ขึ้นต้นด้วย “'+w[0][0]+'”</div></div><input class="inp" id="ti" autocomplete="off" autocapitalize="off" placeholder="พิมพ์คำศัพท์ภาษาอังกฤษ"><div class="row" style="margin-top:12px"><button class="btn p" onclick="tc()">ตรวจคำตอบ</button></div><div id="fb" style="text-align:center;margin-top:12px;font-weight:600"></div>');var i=document.getElementById("ti");i.focus();i.onkeydown=function(e){if(e.key==="Enter")tc()}}
+function tc(){var i=document.getElementById("ti");if(!i||i.disabled)return;var ok=i.value.trim().toLowerCase()===S.cur[0].toLowerCase();i.disabled=true;if(ok)S.sc++;K[S.d.id+":"+S.cur[0]]=ok?"k":"n";sr(S.d,S.cur,ok);bump();save();document.getElementById("fb").innerHTML=ok?"✅ ถูกต้อง!":"❌ คำตอบคือ <u>"+S.cur[0]+"</u>";setTimeout(function(){S.n++;tn()},ok?700:1800)}
+function fin(){$(hd()+'<div class="q"><div class="big">'+S.sc+'/'+S.qs.length+'</div><h2>'+enc()+'</h2></div><div class="row"><button class="btn" onclick="deck('+S.i+')">กลับ</button><button class="btn y" onclick="'+S.mode+'()">เล่นอีกครั้ง</button></div>')}
+function gap(w){var t=w[0].split(" "),r=new RegExp("\\b"+t[0].slice(0,Math.max(4,t[0].length-2))+"\\w*"+t.slice(1).map(function(x){return "\\s+"+x}).join(""),"i");return r.test(w[3])?w[3].replace(r,"_____"):null}
+function cz(){var L=[];S.d.w.forEach(function(w){var s=gap(w);if(s)L.push({w:w,s:s})});S.qs=sh(L);S.n=0;S.sc=0;S.mode="cz";S.ai=0;S.nx=cn;cn()}
+function cn(){if(S.n>=S.qs.length)return fin();var o=S.qs[S.n],w=o.w,p=sh(sh(S.d.w.filter(function(x){return x!==w})).slice(0,3).concat([w]));S.cur=w;var h=hd()+'<div class="top"><button class="ghost" onclick="deck('+S.i+')">← ออก</button><span class="mu">ข้อ '+(S.n+1)+' / '+S.qs.length+' · ถูก '+S.sc+'</span></div><div class="q"><div class="mu">เติมคำในช่องว่าง (เลือกรูปพื้นฐานของคำ)</div><div class="th" style="font-size:24px">'+o.s+'</div><div class="mu">'+w[2]+'</div></div>';p.forEach(function(x){h+='<button class="opt" onclick="ans(this,'+(x===w?1:0)+')">'+x[0]+'</button>'});$(h)}
+function mock(){var A=[];D.forEach(function(d){d.w.forEach(function(w){A.push({w:w,d:d})})});S.mq=sh(A).slice(0,20);S.n=0;S.sc=0;S.wr={};mnx()}
+function mnx(){clearInterval(T);if(S.n>=S.mq.length)return mend();var o=S.mq[S.n],w=o.w,g=S.n%2?gap(w):null,p=sh(sh(o.d.w.filter(function(x){return x!==w})).slice(0,3).concat([w]));S.cur=w;S.ci=g?0:2;S.tt=20;var h=hd()+'<div class="top"><button class="ghost" onclick="home()">← ออก</button><span class="mu">ข้อ '+(S.n+1)+' / '+S.mq.length+' · ถูก '+S.sc+'</span><b id="tm">20</b></div><div class="bar"><i style="width:'+S.n/S.mq.length*100+'%"></i></div><div class="q"><div class="mu">'+(g?"เติมคำในช่องว่าง":"คำนี้แปลว่าอะไร")+'</div><div class="'+(g?"th":"w")+'"'+(g?' style="font-size:24px"':'')+'>'+(g||w[0])+'</div></div>';p.forEach(function(x){h+='<button class="opt" onclick="mans(this,'+(x===w?1:0)+')">'+x[S.ci]+'</button>'});$(h);T=setInterval(function(){S.tt--;var e=document.getElementById("tm");if(e)e.textContent=S.tt;if(S.tt<=0)mans(null,0)},1000)}
+function mans(b,ok){clearInterval(T);var o=S.mq[S.n];document.querySelectorAll(".opt").forEach(function(x){x.disabled=true;if(x.textContent===S.cur[S.ci])x.classList.add("ok")});if(b&&!ok)b.classList.add("no");if(ok)S.sc++;else S.wr[o.d.id]=(S.wr[o.d.id]||0)+1;sr(o.d,S.cur,ok);bump();save();setTimeout(function(){S.n++;mnx()},ok?600:1400)}
+function mend(){var wk=-1,m=0;D.forEach(function(d,i){var c=S.wr[d.id]||0;if(c>m){m=c;wk=i}});$(hd()+'<div class="q"><div class="big">'+S.sc+'/'+S.mq.length+'</div><h2>'+enc()+'</h2>'+(wk>=0?'<div class="mu">พลาดมากที่สุดในชุด</div><b>'+D[wk].n+'</b> ('+m+' ข้อ)':'<b>ไม่พลาดเลย!</b>')+'</div><div class="row">'+(wk>=0?'<button class="btn y" onclick="deck('+wk+')">ท่องชุดนี้ต่อ</button>':'')+'<button class="btn p" onclick="mock()">ทำข้อสอบใหม่</button></div>')}
+function mine(){$(hd()+'<button class="ghost" onclick="home()">← กลับ</button><h1>เพิ่มชุดคำเอง</h1><p class="mu">หนึ่งบรรทัดต่อหนึ่งคำ รูปแบบ: คำศัพท์ | คำแปล | ประโยคตัวอย่าง (ไม่ใส่ก็ได้) หรืออัปโหลดไฟล์ CSV</p><input class="inp" id="nm" placeholder="ชื่อชุดคำ" style="text-align:left;margin-bottom:10px"><textarea class="inp" id="mt" placeholder="apple | แอปเปิล | I eat an apple every day."></textarea><div class="row" style="margin-top:12px;align-items:center"><input type="file" id="mf" accept=".csv,.txt"><button class="btn p" onclick="addd()">บันทึกชุดคำ</button></div>');document.getElementById("mf").onchange=function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){document.getElementById("mt").value=r.result};r.readAsText(f)}}
+function addd(){var n=document.getElementById("nm").value.trim()||"ชุดของฉัน",w=[];document.getElementById("mt").value.split("\n").forEach(function(l){var p=l.split(/\||\t|,/).map(function(x){return x.trim()});if(p[0]&&p[1])w.push([p[0],"คำของฉัน",p[1],p[2]||p[0],"✏️"])});if(!w.length){document.getElementById("mt").placeholder="ต้องมีอย่างน้อย 1 บรรทัด";return}var d={id:"u"+Date.now(),n:n,lv:"My",ic:"✏️",d:"ชุดคำที่คุณสร้างเอง",w:w};X.u.push(d);D.push(d);save();home()}
+function del(i){X.u=X.u.filter(function(x){return x!==D[i]});D.splice(i,1);save();home()}
+var $=function(h){document.getElementById("app").innerHTML=h};
+var S={},T=null;
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function kn(d,w){return K[d.id+":"+w[0]]}
+function cnt(d){return d.w.filter(function(w){return kn(d,w)==="k"}).length}
+function hd(){return '<header><div class="logo" onclick="home()">SMP <b>Vocab</b></div><button class="btn" onclick="tg()" aria-label="โหมดสี">◐</button></header>'}
+function tg(){var r=document.documentElement,d=r.getAttribute("data-theme")==="dark"||(!r.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);r.setAttribute("data-theme",d?"light":"dark")}
+function spk(t){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.9;speechSynthesis.speak(u)}catch(e){}}
+function home(){clearInterval(T);S={};var tot=0,k=0;D.forEach(function(d){tot+=d.w.length;k+=cnt(d)});
+var h=hd()+'<div class="hero"><div><h1>ท่องศัพท์ให้จำได้จริง ทุกวัน วันละนิด</h1><p>Flashcard พร้อมภาพประกอบ เสียงอ่าน และเกมทบทวน สำหรับสอบ TGAT / A-Level</p><div class="chips"><span>'+D.length+' ชุดคำศัพท์</span><span>'+tot+' คำ</span><span>จำได้แล้ว '+k+' คำ</span><span>🔥 '+streak()+' วัน</span></div><button class="btn y" onclick="cont()">'+(k?"เรียนต่อ":"เริ่มท่องเลย")+'</button></div><div class="pv" aria-hidden="true"><div class="pc c1"><div class="em">✈️</div><b>airport</b><small>สนามบิน</small></div><div class="pc c2"><div class="em">🔍</div><b>evidence</b><small>หลักฐาน</small></div></div></div>'+dash()+'<h2 style="margin-top:0">ชุดคำศัพท์</h2><div class="mu">เหมาะกับสนามสอบ</div><div style="margin:8px 0 12px">'+chips()+'</div><div class="grid">';
+D.forEach(function(d,i){if(FL&&(TG[d.id]||"").indexOf(FL)<0)return;var c=cnt(d);h+='<button class="deck" onclick="deck('+i+')"><div class="di">'+d.ic+'</div><span class="tag">'+d.lv+'</span><span class="mu">'+(TG[d.id]||"")+'</span><div class="t">'+d.n+'</div><div class="mu">'+d.d+'</div><div class="bar"><i style="width:'+c/d.w.length*100+'%"></i></div><div class="mu" style="margin-top:6px">'+c+' / '+d.w.length+' คำ</div></button>'});h+='</div>'+(FL?"":soon())+'<div>';
+$(h+'</div>')}
+function deck(i){clearInterval(T);var d=D[i];S={d:d,i:i};
+var h=hd()+'<button class="ghost" onclick="home()">← กลับ</button><h1>'+d.n+'</h1><div class="mu"><span class="tag">'+d.lv+'</span>'+d.w.length+' คำ · จำได้แล้ว '+cnt(d)+'</div>'+(d.id[0]==="u"?'<button class="ghost" onclick="del('+i+')">🗑️ ลบชุดนี้</button>':'');
+h+='<h2>เลือกวิธีเรียน</h2><div class="modes"><button class="mode" onclick="study()"><b>Flashcards</b><span class="mu">พลิกการ์ดทบทวนทีละคำ</span></button><button class="mode" onclick="quiz()"><b>Quiz</b><span class="mu">ตอบคำแปลแบบเลือกคำตอบ</span></button><button class="mode" onclick="match()"><b>Word Match</b><span class="mu">จับคู่ศัพท์กับคำแปลให้เร็วที่สุด</span></button><button class="mode" onclick="typ()"><b>Typing</b><span class="mu">เห็นคำแปล แล้วพิมพ์คำอังกฤษเอง</span></button><button class="mode" onclick="cz()"><b>Cloze Test</b><span class="mu">เติมคำในช่องว่างของประโยค</span></button></div>';
+h+='<h2>รายการคำศัพท์</h2><div class="list">';
+d.w.forEach(function(w){var s=kn(d,w);h+='<div class="li"><div><span class="e">'+em(w)+' '+w[0]+'</span> <span class="mu">'+w[1]+'</span><small>'+w[2]+'</small></div><button class="ghost" onclick="spk(\''+w[0]+'\')" aria-label="ฟังเสียง">🔊</button><span class="dot '+(s||"")+'"></span></div>'});
+$(h+'</div>')}
+function study(rev){var d=S.d,q=due(d);if(!q.length)q=d.w;q=q.slice().sort(function(a,b){return (X.r[d.id+":"+b[0]]||[9])[0]-(X.r[d.id+":"+a[0]]||[9])[0]});
+S.q=S.sh?sh(q):q;S.n=0;S.f=false;S.ses={k:0,n:0};card()}
+function card(){var d=S.d;if(S.n>=S.q.length){var s=S.ses;return $(hd()+'<div class="q"><div class="big">'+s.k+'/'+(s.k+s.n)+'</div><h2>'+enc()+'</h2><div class="mu">จำได้ '+s.k+' คำ · ต้องทบทวน '+s.n+' คำ</div></div><div class="row"><button class="btn" onclick="deck('+S.i+')">กลับหน้าชุดคำ</button>'+(s.n?'<button class="btn y" onclick="study()">ทบทวนคำที่พลาด</button>':'')+'</div>')}
+var w=S.q[S.n],c=cnt(d);S.f=false;
+var ctx=w[3];
+$(hd()+'<div class="top"><button class="ghost" onclick="deck('+S.i+')">← ออก</button><button class="ghost" onclick="S.sh=!S.sh;study()">🔀 สุ่มลำดับ: '+(S.sh?"เปิด":"ปิด")+'</button></div><div class="bar"><i style="width:'+c/d.w.length*100+'%"></i></div><div class="mu" style="text-align:center;margin-top:6px">จำได้แล้ว '+c+' / '+d.w.length+' คำ · การ์ดที่ '+(S.n+1)+' / '+S.q.length+'</div>'+
+'<div class="scene"><div class="card" id="cd" onclick="flip()"><div class="face"><button class="spk" onclick="event.stopPropagation();spk(\''+w[0]+'\')" aria-label="ฟังเสียง">🔊</button><div class="em">'+em(w)+'</div><div class="w">'+w[0]+'</div><div class="pos">'+w[1]+'</div><div class="ex"><div class="mu">เดาจากบริบท</div>'+ctx+'</div><div class="mu" style="margin-top:14px">แตะเพื่อดูคำแปล</div></div>'+
+'<div class="face b"><button class="spk" onclick="event.stopPropagation();spk(\''+w[3].replace(/'/g,"")+'\')" aria-label="ฟังประโยค">🔊</button><div class="em">'+em(w)+'</div><div class="th">'+w[2]+'</div><div class="pos" style="background:#0B2A6F">'+w[0]+'</div><div class="ex" style="background:#fff;color:#0B2A6F">'+w[3]+'</div></div></div></div>'+
+'<div class="row"><button class="btn r" onclick="mark(\'n\')">✕ ต้องทบทวน</button><button class="btn p" onclick="mark(\'k\')">✓ จำได้แล้ว</button></div><div class="mu" style="text-align:center;margin-top:14px">คีย์ลัด: Space พลิก · ← ทบทวน · → จำได้</div>');
+spk(w[0])}
+function flip(){var c=document.getElementById("cd");if(c){S.f=!S.f;c.classList.toggle("f")}}
+function mark(v){var w=S.q[S.n];K[S.d.id+":"+w[0]]=v;sr(S.d,w,v==="k");bump();save();S.ses[v]++;if(v==="n")S.q.push(w);S.n++;card()}
+function quiz(){var d=S.d;S.qs=sh(d.w);S.n=0;S.sc=0;S.mode="quiz";S.ai=2;S.nx=qn;qn()}
+function qn(){var d=S.d;if(S.n>=S.qs.length){return $(hd()+'<div class="q"><div class="big">'+S.sc+'/'+S.qs.length+'</div><h2>'+(S.sc/S.qs.length>=.8?"เยี่ยมมาก!":"ลองทบทวนอีกครั้ง")+'</h2></div><div class="row"><button class="btn" onclick="deck('+S.i+')">กลับ</button><button class="btn y" onclick="quiz()">เล่นอีกครั้ง</button></div>')}
+var w=S.qs[S.n],o=sh(sh(d.w.filter(function(x){return x!==w})).slice(0,3).concat([w]));S.cur=w;
+var h=hd()+'<div class="top"><button class="ghost" onclick="deck('+S.i+')">← ออก</button><span class="mu">ข้อ '+(S.n+1)+' / '+S.qs.length+' · ถูก '+S.sc+'</span></div><div class="bar"><i style="width:'+S.n/S.qs.length*100+'%"></i></div><div class="q"><div class="mu">คำนี้แปลว่าอะไร</div><div class="w">'+w[0]+'</div></div>';
+o.forEach(function(x,i){h+='<button class="opt" onclick="ans(this,'+(x===w?1:0)+')">'+x[2]+'</button>'});
+$(h);spk(w[0])}
+function ans(b,ok){var bs=document.querySelectorAll(".opt");bs.forEach(function(x){x.disabled=true});b.classList.add(ok?"ok":"no");
+if(!ok)bs.forEach(function(x){if(x.textContent===S.cur[S.ai])x.classList.add("ok")});
+if(ok)S.sc++;K[S.d.id+":"+S.cur[0]]=ok?"k":"n";sr(S.d,S.cur,ok);bump();save();setTimeout(function(){S.n++;S.nx()},ok?700:1500)}
+function match(){var d=S.d,p=sh(d.w).slice(0,6),t=[];p.forEach(function(w){t.push({k:w[0],t:w[0]});t.push({k:w[0],t:w[2]})});
+S.t=sh(t);S.sel=null;S.left=6;S.s=Date.now();clearInterval(T);mr();T=setInterval(function(){var e=document.getElementById("tm");if(e)e.textContent=((Date.now()-S.s)/1000).toFixed(1)+" วิ"},100)}
+function mr(){var h=hd()+'<div class="top"><button class="ghost" onclick="deck('+S.i+')">← ออก</button><b id="tm">0.0 วิ</b></div><h2>แตะจับคู่ศัพท์กับคำแปล</h2><div class="tiles">';
+S.t.forEach(function(x,i){h+='<button class="tile'+(x.d?" d":"")+(S.sel===i?" s":"")+'" onclick="pick('+i+')">'+x.t+'</button>'});$(h+'</div>')}
+function pick(i){var a=S.t[i];if(S.sel===null){S.sel=i;return mr()}if(S.sel===i){S.sel=null;return mr()}var b=S.t[S.sel];
+if(a.k===b.k){a.d=b.d=1;S.left--;S.sel=null;mr();if(!S.left){clearInterval(T);var s=((Date.now()-S.s)/1000).toFixed(1);$(hd()+'<div class="q"><div class="big">'+s+' วิ</div><h2>จับคู่ครบแล้ว!</h2></div><div class="row"><button class="btn" onclick="deck('+S.i+')">กลับ</button><button class="btn y" onclick="match()">เล่นอีกครั้ง</button></div>')}}
+else{var j=S.sel;S.sel=null;mr();var ts=document.querySelectorAll(".tile");[ts[i],ts[j]].forEach(function(e){e.classList.add("x")});setTimeout(mr,450)}}
+document.addEventListener("keydown",function(e){if(!document.getElementById("cd"))return;if(e.code==="Space"){e.preventDefault();flip()}if(e.key==="ArrowLeft")mark("n");if(e.key==="ArrowRight")mark("k")});
+home();
+</script>
+</body>
+</html>
